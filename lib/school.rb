@@ -20,14 +20,15 @@ class School
     @roster[grade] << name
   end
   
-  def grade
+  def grade(grade)
     @roster[grade]
   end
   
   def sort
-    @roster.map do |grade,students|
-      grade => students.sort
+    @roster.keys.each do |key|
+      @roster[key] = @roster[key].sort
     end
+    @roster
   end
   
 end
